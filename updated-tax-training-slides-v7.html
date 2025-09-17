@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UK Tax Training - Financial Crime Team</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slides-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        h1 {
+            color: #5a67d8;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #5a67d8;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2d3748;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #f7fafc 0%, #e2e8f0 100%);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        
+        h3 {
+            color: #4a5568;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 4px solid #5a67d8;
+            padding-left: 15px;
+        }
+        
+        .controls {
+            background: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        
+        button {
+            padding: 12px 30px;
+            background: #5a67d8;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        button:hover:not(:disabled) {
+            background: #4c51bf;
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+        }
+        
+        .slide-indicator {
+            font-weight: bold;
+            color: #5a67d8;
+            padding: 0 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #5a67d8;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        .warning-box {
+            background: #fed7d7;
+            border-left: 5px solid #c53030;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .info-box {
+            background: #bee3f8;
+            border-left: 5px solid #2b6cb0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .success-box {
+            background: #c6f6d5;
+            border-left: 5px solid #2f855a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .title-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .title-slide h1 {
+            font-size: 3em;
+            border: none;
+        }
+        
+        .red-flag {
+            color: #c53030;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="slides-wrapper">
+<!-- Slide 1 -->
+<div class="slide active">
+<div class="title-slide">
+<h1>UK Tax Compliance Training</h1>
+<p style="font-size: 1.5em; color: #4a5568; margin: 20px 0;">Financial Crime Team</p>
+<p style="font-size: 1.2em; margin-top: 30px;">Understanding Tax Evasion Red Flags</p>
+<p style="color: #718096; margin-top: 40px;">Presented by: Aftab, Lead Accounting and Tax Expert at ANNA.</p>
+<p style="color: #718096;">September 2025</p>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="slide">
+<h1>UK Tax System Overview</h1>
+<h2>Main Types of UK Taxes</h2>
+<table>
+<tr>
+<th>Tax Type</th>
+<th>Who Pays</th>
+<th>Basic Rate</th>
+<th>Key Threshold 2025-26</th>
+</tr>
+<tr>
+<td><strong>VAT</strong></td>
+<td>Businesses on goods/services</td>
+<td>20% (standard)</td>
+<td>£90,000 registration</td>
+</tr>
+<tr>
+<td><strong>Income Tax</strong></td>
+<td>Individuals on earnings</td>
+<td>20% basic rate</td>
+<td>£12,570 personal allowance</td>
+</tr>
+<tr>
+<td><strong>Corporation Tax</strong></td>
+<td>Limited companies on profits</td>
+<td>19% / 25%</td>
+<td>£250,000 main rate threshold</td>
+</tr>
+<tr>
+<td><strong>PAYE/NIC</strong></td>
+<td>Employers and employees</td>
+<td>Various</td>
+<td>Low earnings threshold £6,396 per year, employees paid more than this must be on payroll even if no tax or national insurance are deducted</td>
+</tr>
+<tr>
+<td><strong>Capital Gains Tax</strong></td>
+<td>On asset disposals</td>
+<td>10% / 20%</td>
+<td>£3,000 annual exemption</td>
+</tr>
+</table>
+<div class="warning-box">
+<h4>🚨 Key Compliance Point</h4>
+<p>Businesses crossing these thresholds MUST register within 30 days or face penalties.</p>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="slide">
+<h1>VAT - Value Added Tax</h1>
+<h2>How VAT Works</h2>
+<p><strong>Business charges customer:</strong> Product £100 + VAT £20 = £120</p>
+<p><strong>Business collects:</strong> £20 VAT (Output VAT)</p>
+<p><strong>Business pays HMRC:</strong> Output VAT minus Input VAT</p>
+<h3>2025-26 VAT Thresholds</h3>
+<ul>
+<li><strong>Registration threshold:</strong> £90,000 (turnover in 12 months)</li>
+<li><strong>Deregistration threshold:</strong> £88,000</li>
+<li><strong>EU-wide distance selling threshold (post-Brexit):</strong> €10,000</li>
+<li><strong>UK import threshold for low-value goods:</strong> £135 (imports above this are subject to import VAT at point of import)</li>
+</ul>
+</div>
+<!-- New Slide: Distance Selling (UK to EU) -->
+<div class="slide">
+<h1>Distance Selling - UK businesses to EU consumers</h1>
+<h2>Definition</h2>
+<p>Cross-border online sales from a UK business to consumers in the EU.</p>
+<h3>Key rule change</h3>
+<ul>
+<li>UK businesses lost the EU distance selling thresholds from 1 January 2021</li>
+<li>Current EU-wide threshold: €10,000 for sales to EU consumers</li>
+</ul>
+<h3>Practical implications</h3>
+<ul>
+<li>If EU consumer sales exceed €10,000 a year you must either register for VAT in each EU country you sell to or use the EU One Stop Shop (OSS)</li>
+<li>Below €10,000 you may charge UK VAT and keep records to show low sales to EU consumers</li>
+</ul>
+<h3>Red flags for the compliance team</h3>
+<ul class="red-flag">
+<li>High EU consumer sales with no evidence of VAT registration or OSS use</li>
+<li>Artificially staying just under €10,000 across reporting periods</li>
+<li>Inconsistent VAT treatment between customers billed as businesses and consumers</li>
+</ul>
+<p>Case example: a small online retailer or app developer with large EU consumer sales but no evidence of VAT compliance. Check platform invoices and export proof.</p>
+</div>
+<!-- New Slide: Digital platforms and App Store VAT -->
+<div class="slide">
+<h1>Digital platforms - App Store and Play Store</h1>
+<h2>How platform sales usually work</h2>
+<ul>
+<li>Platforms commonly act as the merchant of record for consumer purchases and handle VAT collection and remittance in many jurisdictions</li>
+<li>Developers usually receive net proceeds after platform fees and any VAT the platform has charged</li>
+<li>Where platforms handle VAT for consumer sales developers often do not need separate VAT registrations for those consumer sales, but check platform invoices</li>
+</ul>
+<h3>Practical checks for compliance</h3>
+<ul>
+<li>Ask for platform invoices showing VAT charged and remitted</li>
+<li>If the developer claims complex international VAT burdens, request evidence from the platform</li>
+<li>When developers sell directly to consumers outside platforms they may have VAT registration obligations in multiple jurisdictions</li>
+</ul>
+</div>
+<!-- New Slide: VAT Schemes -->
+<div class="slide">
+<h1>Common VAT Schemes</h1>
+<h2>Flat Rate Scheme</h2>
+<p>Small businesses pay a fixed percentage of turnover as VAT, simplifying record-keeping. Input VAT recovery is limited.</p>
+<h2>Margin Scheme</h2>
+<p>Used for second-hand goods, works of art and antiques. VAT is charged only on the profit margin, not full selling price.</p>
+<h2>Tour Operators' Margin Scheme (TOMS)</h2>
+<p>Applies to travel businesses selling packages. VAT is calculated on the margin between selling price and direct costs of travel services.</p>
+</div>
+<!-- New Slide: UK Businesses Selling in the EU -->
+<div class="slide">
+<h1>UK Businesses Selling in the EU and outside the EU</h1>
+<h2>Goods to the EU</h2>
+<ul>
+<li>UK sellers can zero-rate exports to EU where they hold valid export evidence</li>
+<li>Import VAT is due in the EU country where the goods arrive and the buyer may pay import VAT at the border</li>
+<li>UK sellers must check if they need local VAT registration for distance sales above €10,000 or use OSS</li>
+</ul>
+<h2>Services to the EU</h2>
+<ul>
+<li>B2B services: place of supply is usually where the customer is established. Supplier normally does not charge UK VAT. Customer accounts for VAT in their country under the reverse charge.</li>
+<li>B2C services: place of supply is often the supplier's country. Exceptions exist for electronically supplied services and certain professional services.</li>
+</ul>
+<h2>Sales outside the EU</h2>
+<ul><li>Sales outside the UK and EU are outside the scope of VAT and no VAT is charged.</li></ul>
+<h2>Place of supply concept</h2>
+<p>Place of supply decides which country has the right to tax a supply for VAT. It depends on the type of supply and whether the customer is a business or a consumer.</p>
+<ul>
+<li>For B2B services the place of supply is usually where the customer is established</li>
+<li>For B2C services the place of supply is usually where the supplier is established unless special rules apply</li>
+</ul>
+<h2>Case example</h2>
+<p>Example: A UK web design company sells services to a VAT registered business in Germany. The place of supply is Germany. The UK supplier invoices with no UK VAT. The German business accounts for VAT under the reverse charge on its German VAT return. The UK supplier must keep evidence the customer is VAT registered.</p>
+</div><!-- Slide 4 -->
+<div class="slide">
+<h1>Income Tax &amp; PAYE System</h1>
+<h2>Income Tax Bands 2025-26</h2>
+<table>
+<tr>
+<th>Band</th>
+<th>Taxable Income</th>
+<th>Tax Rate</th>
+</tr>
+<tr>
+<td>Personal Allowance</td>
+<td>Up to £12,570</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Basic Rate</td>
+<td>£12,571 - £50,270</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Higher Rate</td>
+<td>£50,271 - £125,140</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>Additional Rate</td>
+<td>Over £125,140</td>
+<td>45%</td>
+</tr>
+</table>
+<h3>PAYE Requirements</h3>
+<ul>
+<li>Employers can claim Employment Allowance of up to £10,000 of employer National Insurance if they have one or more employees who are not directors. A single director on their own cannot claim this allowance.</li>
+<li>Employees paid more than £6,396 a year must be on payroll even if no tax or national insurance are deducted</li>
+<li>Register before first payday</li>
+<li>Submit RTI on or before payday</li>
+<li>Pay HMRC by 22nd monthly</li>
+</ul>
+<div class="warning-box">
+<h4>🚨 Red Flags</h4>
+<ul>
+<li>Regular "salary" payments without PAYE</li>
+<li>Round sums (£2,000, £5,000)</li>
+<li>Multiple "consultants" working like employees</li>
+</ul>
+</div>
+</div>
+<!-- Slide 5 -->
+<div class="slide">
+<h1>Corporation Tax</h1>
+<h2>Rates for 2025-26</h2>
+<table>
+<tr>
+<th>Profit Level</th>
+<th>Tax Rate</th>
+</tr>
+<tr>
+<td>Up to £50,000</td>
+<td>19% (small profits rate)</td>
+</tr>
+<tr>
+<td>£50,001 - £250,000</td>
+<td>19% - 25% (marginal relief)</td>
+</tr>
+<tr>
+<td>Over £250,000</td>
+<td>25% (main rate)</td>
+</tr>
+</table>
+<h3>Key Compliance Points</h3>
+<ul>
+<li>File accounts within 9 months</li>
+<li>Pay tax within 9 months and 1 day</li>
+<li>CT600 return within 12 months</li>
+</ul>
+<div class="info-box">
+<h4>💡 Director's Responsibilities</h4>
+<p>Directors are personally liable for corporation tax compliance.</p>
+</div>
+</div>
+<!-- Slide 6 -->
+<div class="slide">
+<h1>Extracting Funds - The RIGHT Way</h1>
+<h2>Compliant Methods</h2>
+<table>
+<tr>
+<th>Method</th>
+<th>Tax Treatment</th>
+<th>Documentation</th>
+</tr>
+<tr style="background: #c6f6d5;">
+<td>Salary (PAYE)</td>
+<td>Income tax + NIC</td>
+<td>Payslips, RTI</td>
+</tr>
+<tr style="background: #c6f6d5;">
+<td>Dividends</td>
+<td>8.75% - 39.35%</td>
+<td>Board minutes</td>
+</tr>
+<tr style="background: #c6f6d5;">
+<td>Pension</td>
+<td>Tax relief</td>
+<td>Scheme docs</td>
+</tr>
+<tr style="background: #c6f6d5;">
+<td>Expenses</td>
+<td>Tax-free if business</td>
+<td>Receipts</td>
+</tr>
+</table>
+<div class="success-box">
+<h4>✅ Best Practice 2025-26</h4>
+<p>Salary: £12,570 + Dividends: £37,700 = £50,270 minimal tax</p>
+</div>
+</div>
+<!-- Slide 7 -->
+<div class="slide">
+<h1>Extracting Funds - The WRONG Way</h1>
+<h2>Tax Evasion Methods</h2>
+<table>
+<tr>
+<th>Method</th>
+<th>How It Works</th>
+<th>Red Flags</th>
+</tr>
+<tr style="background: #fed7d7;">
+<td>Direct Transfers</td>
+<td>Taking money without declaration</td>
+<td>Round sums, no docs</td>
+</tr>
+<tr style="background: #fed7d7;">
+<td>False Invoicing</td>
+<td>Fake supplier invoices</td>
+<td>Residential addresses</td>
+</tr>
+<tr style="background: #fed7d7;">
+<td>Personal Expenses</td>
+<td>Personal as business</td>
+<td>Holidays as "trips"</td>
+</tr>
+<tr style="background: #fed7d7;">
+<td>Overdrawn DLA</td>
+<td>Director loans &gt;£10k</td>
+<td>No repayment plan</td>
+</tr>
+</table>
+<div class="warning-box">
+<h4>🔍 Case Example</h4>
+<p>£115,000 "dividends" paid but company made losses!</p>
+<p class="red-flag">Can't pay dividends without profits</p>
+</div>
+</div>
+<!-- Slide 8 -->
+<div class="slide">
+<h1>VAT Carousel Fraud (MTIC)</h1>
+<h2>How It Works</h2>
+<ol>
+<li><strong>EU Supplier:</strong> Sells goods VAT-free to UK</li>
+<li><strong>Missing Trader:</strong> Sells with VAT but disappears</li>
+<li><strong>Buffer Company:</strong> Claims input VAT refund</li>
+<li><strong>Broker:</strong> Exports VAT-free back to EU</li>
+</ol>
+<h3>Red Flags</h3>
+<ul class="red-flag">
+<li>High-value trades in first month</li>
+<li>Consistent 5-10% margins</li>
+<li>Same-day trading cycles</li>
+<li>Mobile phones, chips, carbon credits</li>
+<li>Large VAT reclaims, minimal substance</li>
+</ul>
+<div class="warning-box">
+<h4>🚨 Pattern Example</h4>
+<p>Day 1: Register VAT</p>
+<p>Day 30: £500k EU purchase</p>
+<p>Day 31: £600k UK sale</p>
+<p>Day 32: VAT reclaim</p>
+<p>Day 60: Company vanishes</p>
+</div>
+</div>
+<!-- Slide 9 -->
+<div class="slide">
+<h1>Bogus VAT Refunds</h1>
+<h2>Common Schemes</h2>
+<h3>1. False Export Claims</h3>
+<p>Claiming goods exported (0% VAT) but sold in UK</p>
+<ul>
+<li>No export documentation</li>
+<li>UK residential addresses</li>
+</ul>
+<h3>2. Inflated Input VAT</h3>
+<p>Creating fake purchase invoices</p>
+<ul>
+<li>Suppliers not VAT registered</li>
+<li>Round figure invoices</li>
+<li>No delivery evidence</li>
+</ul>
+<h3>3. Phoenix Trading</h3>
+<p>Register, claim refund, disappear</p>
+<ul>
+<li>Immediate large transactions</li>
+<li>History of dissolved companies</li>
+<li>Refunds exceed sales</li>
+</ul>
+<div class="info-box">
+<h4>💡 Quick Check</h4>
+<p>If Input VAT &gt; 20% of purchases, investigate!</p>
+</div>
+</div>
+<!-- New Slide: Phoenix Trading -->
+<div class="slide">
+<h1>Phoenix Trading - Serial Company Formation to Evade Debts</h1>
+<h2>Definition</h2>
+<p>Phoenix trading is when directors repeatedly create new companies from failed companies, leaving creditors unpaid.</p>
+<h3>Typical phoenix cycle</h3>
+<ol>
+<li>Build up debts</li>
+<li>Strip assets</li>
+<li>Abandon old company</li>
+<li>Start new company with same business</li>
+</ol>
+<h3>Scale</h3>
+<p>HMRC estimated total losses from phoenixing at around £836 million in 2022-23.</p>
+<h3>Key red flags</h3>
+<ul class="red-flag">
+<li>Directors with multiple dissolved companies</li>
+<li>Previous companies with no filed accounts before dissolution</li>
+<li>Similar business activities across old and new companies</li>
+<li>Large asset transfers between related companies</li>
+<li>Rapid company formation after dissolution</li>
+<li>Similar company names to dissolved entities</li>
+</ul>
+<h3>Legal vs illegal</h3>
+<p>Company failure can be legitimate. Deliberate stripping of assets to evade debts is criminal.</p>
+<h3>HMRC response</h3>
+<p>HMRC and the Insolvency Service run investigations. Directors can face disqualification and criminal sanctions.</p>
+<h3>Connection to our work</h3>
+<p>Watch for these patterns during onboarding and ongoing monitoring to prevent fraud and recover debts.</p>
+</div>
+<!-- Slide 10 -->
+<div class="slide">
+<h1>Construction Industry Scheme (CIS)</h1>
+<h2>What is CIS?</h2>
+<p>Tax deduction scheme for construction work to combat evasion</p>
+<h3>How It Works</h3>
+<p><strong>Contractor</strong> → Deducts 20% or 30% → <strong>Subcontractor</strong></p>
+<h3>Who Must Register?</h3>
+<table>
+<tr>
+<th>As Contractor</th>
+<th>As Subcontractor</th>
+</tr>
+<tr>
+<td>£3m+ construction in 3 years</td>
+<td>Anyone doing construction</td>
+</tr>
+<tr>
+<td>All construction companies</td>
+<td>Not employees</td>
+</tr>
+<tr>
+<td>Property developers</td>
+<td>Can get gross payment status</td>
+</tr>
+</table>
+<h3>Deduction Rates</h3>
+<ul>
+<li><strong>20%:</strong> Registered subcontractors</li>
+<li><strong>30%:</strong> Unregistered</li>
+<li><strong>0%:</strong> Gross payment status</li>
+</ul>
+</div>
+<!-- Slide 11 -->
+<div class="slide">
+<h1>CIS Red Flags</h1>
+<h2>Businesses Often Missed</h2>
+<ul>
+<li>Property developers</li>
+<li>Gang masters providing labour</li>
+<li>Scaffolders, demolition</li>
+<li>Painting, decorating</li>
+</ul>
+<h2>Common Evasion Methods</h2>
+<ul>
+<li><strong>False status:</strong> Employees as subcontractors</li>
+<li><strong>Non-registration:</strong> Avoiding CIS completely</li>
+<li><strong>Cash payments:</strong> No deductions made</li>
+<li><strong>Invoice splitting:</strong> Stay below thresholds</li>
+</ul>
+<h3>Key points for compliance</h3>
+<ul>
+<li><strong>Zero-rated vs exempt:</strong> Zero-rated supplies are charged at 0 percent and input VAT can usually be reclaimed. Exempt supplies are outside VAT and input VAT cannot be reclaimed.</li>
+<li><strong>Examples:</strong> Many basic food items and young children’s clothing are zero-rated. Financial services, education and some health services are commonly exempt.</li>
+<li><strong>Selling to EU customers:</strong> For goods exported to the EU, UK sellers normally treat the sale as an export and may zero-rate VAT where valid export evidence exists. For sales to EU consumers monitor the €10,000 threshold and register in relevant EU states or use the OSS if required. For services the VAT treatment depends on place of supply rules and whether the customer is a business or consumer.</li>
+<li><strong>Reverse charge:</strong> For many cross-border B2B supplies the buyer accounts for VAT under the reverse charge. This shifts reporting from the supplier to the buyer and is an anti-fraud measure.</li>
+<li><strong>Practical red flags:</strong> High EU sales with no VAT evidence, inconsistent VAT on invoices, frequent 'exports' with weak shipping paperwork, large imports close to £135, and claims of complex platform handling without matching platform invoices.</li>
+</ul>
+<div class="warning-box">
+<h4>🔍 Real Case</h4>
+<p>"IT Consultancy" providing construction workers</p>
+<p>50+ payments of £1,950 monthly</p>
+<p>All workers at same site</p>
+<p class="red-flag">No CIS registration = £500k+ evasion</p>
+</div>
+</div>
+<!-- Slide 12 -->
+<div class="slide">
+<h1>Summary - Your Toolkit</h1>
+<h2>Key Thresholds 2025-26</h2>
+<table>
+<tr>
+<th>Tax</th>
+<th>Threshold</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>VAT</td>
+<td>£90,000</td>
+<td>Register in 30 days</td>
+</tr>
+<tr>
+<td>PAYE</td>
+<td>First employee</td>
+<td>Register before payday</td>
+</tr>
+<tr>
+<td>CIS</td>
+<td>Any construction</td>
+<td>Register before starting</td>
+</tr>
+</table>
+<h3>Your 5-Point Checklist</h3>
+<ol>
+<li>Check registration timing</li>
+<li>Verify business substance</li>
+<li>Analyse extraction methods</li>
+<li>Review director history</li>
+<li>Calculate tax gaps</li>
+</ol>
+<div class="warning-box">
+<h4>🚨 SAR Triggers</h4>
+<ul>
+<li>VAT avoided beyond £150k</li>
+<li>Multiple "salary" no PAYE</li>
+<li>Carousel fraud patterns</li>
+<li>History of dissolved companies</li>
+</ul>
+<div class="info-box">
+<h4>📄 Worked example (separate PDF)</h4>
+<p>A detailed worked example of VAT carousel fraud with numbers and money flows is provided as a separate PDF. It shows how £42,000 can be stolen in one cycle and highlights red flags to watch for.</p>
+<ul>
+<li>Review the PDF to see where the theft occurs in the chain</li>
+<li>Look for the banking and transaction patterns described in the example</li>
+<li>Understand why innocent businesses become involved</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="slide"><h1>Takeaways from the Tax Training Session</h1>
+<ul>
+<li>You now have a basic understanding of why some users are VAT registered and others are not.</li>
+<li>Many EU-related sales show 0% VAT because they fall under reverse charge rules.</li>
+<li>Not all differences in VAT treatment signal wrongdoing.</li>
+</ul>
+<h2>When reviewing cases:</h2>
+<ul>
+<li>Tax evasion is rarely clear cut unless it is very obvious.</li>
+<li>The key factor is intent to evade – and intent is difficult to prove.</li>
+<li>If intent is not obvious, do not escalate immediately.</li>
+<li>Instead, ask questions first and gather more information.</li>
+</ul>
+<h2>Practical steps:</h2>
+<ul>
+<li>Confirm whether the user has an accountant.</li>
+<li>If they do, request accountant correspondence.</li>
+<li>Where a professional firm is engaged, tax compliance becomes their responsibility, not ours.</li>
+</ul>
+<h2>When to escalate:</h2>
+<ul>
+<li>Only pursue further if there are other serious concerns, such as:</li>
+<ul>
+<li>Signs of money laundering</li>
+<li>Questionable legitimacy of the trade</li>
+</ul>
+</ul>
+<h2>Key message:</h2>
+<p>Focus on asking the right questions.<br/>
+If tax intent is unclear, it is not automatically a financial crime case.<br/>
+Your role is to flag risks, not prove tax evasion.</p>
+</div><div class="controls">
+<button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+<span class="slide-indicator">
+                Slide <span id="currentNum">1</span> of 18
+            </span>
+<button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+</div>
+</div>
+<script>
+        let currentSlide = 1;
+        const totalSlides = 19;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            // Wrap around
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+                slide.classList.remove('active');
+            });
+            
+            // Show current slide
+            slides[currentSlide - 1].style.display = 'block';
+            slides[currentSlide - 1].classList.add('active');
+            
+            // Update counter
+            document.getElementById('currentNum').textContent = currentSlide;
+            
+            // Update buttons
+            document.getElementById('prevBtn').disabled = (currentSlide === 1);
+            document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+        }
+        
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+        
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
